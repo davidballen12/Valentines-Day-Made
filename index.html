@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            height: 100vh;
+            background: url("yourphoto.jpg") no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.55);
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        button {
+            font-size: 1.5em;
+            padding: 10px 30px;
+            margin: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .yes {
+            background-color: white;
+            color: #ff4d6d;
+        }
+
+        .no {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        #response {
+            margin-top: 30px;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="overlay">
+    <h1>Will You Be My Valentine? ❤️</h1>
+
+    <button class="yes" onclick="yesClicked()">Yes 💖</button>
+    <button class="no" onclick="noClicked()">No 😢</button>
+
+    <div id="response"></div>
+</div>
+
+<script>
+function yesClicked() {
+    document.getElementById("response").innerHTML =
+        "You just made me the happiest man alive 😍 I can't wait to spend forever with you ❤️";
+}
+
+function noClicked() {
+    document.getElementById("response").innerHTML =
+        "Nice try 😏 The only correct answer was YES. You're stuck with me 💕";
+}
+</script>
+
+</body>
+</html>
