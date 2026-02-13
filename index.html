@@ -7,16 +7,31 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            text-align: center;
-            color: white;
             height: 100vh;
-            background: url("77a4e71e-a323-4c39-adc3-48b3d9447e29.mov") no-repeat center center/cover;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
         }
 
-        .overlay {
+        /* Background Image */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("background.jpg") no-repeat center center/cover;
+            filter: blur(6px);
+            transform: scale(1.1); /* prevents blur edge gaps */
+            z-index: -1;
+        }
+
+        .card {
+            text-align: center;
+            color: white;
             background: rgba(0, 0, 0, 0.55);
             padding: 40px;
             border-radius: 20px;
@@ -52,13 +67,13 @@
 
         #response {
             margin-top: 30px;
-            font-size: 2em;
+            font-size: 1.8em;
         }
     </style>
 </head>
 <body>
 
-<div class="overlay">
+<div class="card">
     <h1>Will You Be My Valentine? ❤️</h1>
 
     <button class="yes" onclick="yesClicked()">Yes 💖</button>
